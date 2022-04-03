@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../components/bottompanel.css">
+    <link rel="stylesheet" href="../components/navstyle.css">
+   
+    <title>Create Account</title>
+    <link rel="icon" type="image/x-icon" href="//cdn.shopify.com/s/files/1/0054/6665/2718/files/logo_02_32x32.png?v=1606307450">
+   
+
+    <style>
+         *{
+            font-family:Museo Sans,sans-serif!important ;
+        }
+        #SandeepBhai{
+            /* margin: auto; */
+            width: 80%;
+            margin: 50px auto;
+
+        }
+        form>h5{
+            /* margin-bottom: 2%; */
+            font-family: Museo Sans,sans-serif!important;
+        }
+        input{
+            width: 300px;
+            height: 25px;
+        }
+        hr{
+              background-color: lightgrey;
+              
+        }
+        
+        h4{
+            color: grey;
+            font-family: Museo Sans,sans-serif!important;
+            margin-bottom: 10px;
+        }
+        #submit{
+            text-align: center;
+            width: 200px;
+            height: 30px;
+            margin-top: 20px;
+            color: white;
+            background-color:black;
+            border: none;
+            box-shadow: inset 0 0 0 #f9e506;
+            transition: ease-in-out 0.3s;
+             outline: none;
+        }
+        #submit:hover{
+           background-color: green;
+           cursor: pointer;
+          
+        }
+        h3{
+            font-family: Museo Sans,sans-serif!important;
+        }
+        #Hiddenimages{
+            display: none;
+            grid-template-columns: repeat(4,1fr);
+            text-align: center;
+            font-family: Museo Sans,sans-serif!important;
+            margin-top: 100px;
+        }
+
+        #Hiddenimages>img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid orange;
+        }
+
+         @media only screen and (min-width:0px) and (max-width:700px){
+
+            #images{
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+            text-align: center;
+            font-family: Museo Sans,sans-serif!important;
+            }
+         }
+         #suggestion{
+             height: 10px;
+             /* background-color: rgb(220,53,69); */
+             
+         }
+        
+       
+    </style>
+</head>
+<body>
+
+
+      <div id="sid_navbar">
+          
+      </div>
+
+    <div id="SandeepBhai">
+        <div id="Hiddenimages">
+           
+           
+        </div>
+        <div style="display:flex;gap:5px"> 
+        <h4>Home</h4>
+        <h4>> Create Account</h4>
+        </div>
+        <h3>CREATE AN ACCOUNT</h3><hr>
+        <h5 style="color:grey; margin: 10px 0px;" >Sign up for a free account at Bella Vita Organic.</h5>
+
+             <div id="suggestion">
+
+             </div>
+        <form action="">
+            <h5>First Name</h5>
+            <input id="name" type="text" >
+            <h5>Last Name</h5>
+            <input id="last" type="text" >
+            <h5 >Your Email Address</h5>
+            <input id="email" type="email" >
+            <h5>Your Password</h5>
+            <input id="password" minlength="8" type="password" ><hr style="border: none;">
+            <input id="submit" type="submit" value="CREATE AN ACCOUNT">
+             
+        </form>
+
+
+       
+    </div>
+    <div id="huz_bottom_panel"></div>
+</body>
+</html>
+<script type="module">
+       import navbar from "../../components/navbar.js"
+
+       document.getElementById("sid_navbar").innerHTML=navbar();
+
+       import bottomPanel from "../../components/bottompanel.js"
+
+let thelastpanel = document.querySelector("#huz_bottom_panel");
+    thelastpanel.innerHTML = bottomPanel();
+
+    document.querySelector("form").addEventListener("submit", Register)
+    async function Register(event) 
+    {
+        event.preventDefault();
+    
+            try {
+                let register_data =
+                {
+                   firstName: document.querySelector("#name").value,
+                    lastName: document.querySelector("#last").value,
+                    email: document.querySelector("#email").value,
+                    password: document.querySelector("#password").value
+                }
+                // console.log(firstName)
+                register_data = JSON.stringify(register_data);
+                let res = await fetch("https://bella-vita-clone-backend.herokuapp.com/register", {
+                    method: "POST",
+                    body: register_data,
+
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                let data = await res.json();
+                // console.log(data)
+                if (data.token) {
+                    alert("sucessfully signup")
+                    window.location.href = "login.html"
+                }
+
+            } catch (error) {
+                console.log({error:error.message})
+            }
+        
+    }
+
+import images from "./imageshai/images.js"
+
+var photos=document.getElementById("images")
+photos.innerHTML=images()
+    
+
+
+    // -----------------------------------------------------------------------Search Function
+
+document.querySelector(".query_icon").addEventListener("click", ()=>{
+    let searchvalue= document.querySelector("#query");
+    searchvalue.style.display="flex";
+    searchvalue.addEventListener("keypress", function(event){
+        if(event.key=="Enter")
+        {
+
+            if(searchvalue.value.length > 0) {
+                localStorage.setItem("bellaSearch", searchvalue.value);
+                window.location.href = ".//Products/search.html"
+            }
+            
+            //console.log(searchvalue.value)
+         }
+     });
+})
+
+// showing number of items present in the cart on the navbar;
+let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
+
+document.getElementById("ga_cartItems1").innerText = carArrLength.length
+document.getElementById("ga_cartItems2").innerText = carArrLength.length
+
+
+</script>

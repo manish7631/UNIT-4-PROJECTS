@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Bella Vita Organic</title>
+    <link rel="icon" type="image/x-icon" href="//cdn.shopify.com/s/files/1/0054/6665/2718/files/logo_02_32x32.png?v=1606307450">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+
+<style>
+
+#ga_main {
+    width: 100%;
+    display: flex;
+}
+#ga_container {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 10%;
+}
+#ga_products {
+    flex: 5;
+    width: 80%;
+    padding: 0 4%;
+    margin: auto;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.total {
+            padding: 10px;
+            border-bottom: 1px solid rgb(207, 204, 204);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+.btn-group,.input-group {
+    width: 100%;
+    margin: 20px 0 10px;
+    border-color: gray;
+}
+
+#ga_method {
+    border: 1px solid rgb(219, 219, 219);
+    padding: 0 10px;
+    border-radius: 3px;
+}
+#ga_complete {
+    border: none;
+    background-color: black;
+    color: white;
+    width: 30%;
+    align-self: flex-end;
+    margin-top: 20px;
+    padding: 20px 0;
+    font-size: small;
+    font-weight: bold;
+}
+.icon {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    margin-top: 3vh;
+}
+
+.icon div img {
+    width: 60px;
+}
+
+.icon div p {
+    font-size: 0.65rem;
+    width: 50px;
+    line-height: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+p>span>img {
+            width: 70px;
+        }
+</style>
+
+
+<body>
+    <img height="250px" width="100%" src="https://images-na.ssl-images-amazon.com/images/S/abs-image-upload-na/9/AmazonStores/A21TJRUUN4KGV/b1598cd655f2f398a1fef6b40752d118.w1200.h400.jpg" alt="">
+    <div id="ga_main">
+        <div id="ga_container">
+
+            <div>
+                <p>ADD TIP</p>
+
+            <div class="card text-dark bg-light mb-3" style="max-width: 100%;">
+                <div class="card-header">Show your support for the team at Bella Vita Organic</div>
+                <div class="card-body">
+                    
+
+                    <div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example">
+                        <button type="button" class="btn btn-outline-secondary">₹10</button>
+                        <button type="button" class="btn btn-outline-secondary">₹20</button>
+                        <button type="button" class="btn btn-outline-secondary">₹50</button>
+                        <button type="button" class="btn btn-outline-secondary">None</button>
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Custom tip" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">ADD TIP</button>
+                      </div>
+
+                      <p>Thank You, we appreciate it</p>
+
+                </div>
+            </div>
+            </div>
+
+
+            <p style="margin: 40px 0 5px;">PAYMENT</p>
+            <p>All transactions are secure and encrypted.</p>
+
+
+            <div id="ga_method">
+                <p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" data-bs-toggle="collapse" href="#collapseExample" role="radio" aria-expanded="false" aria-controls="collapseExample">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                         Credit Cards / Debit Cards / Net-Banking <span><img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/payments-stripe-sub-footer_2.svg?v=1616140901" alt=""></span>
+                        </label>
+                      </div>
+    
+                  </p>
+    
+                  <p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" data-bs-toggle="collapse" href="#collapseExample" role="radio" aria-expanded="false" aria-controls="collapseExample">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Wallets / UPI / PhonePe / Paytm /Gpay<span><img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/payments-stripe-sub-footer_2.svg?v=1616140901" alt=""></span>
+                        </label>
+                      </div>
+    
+                  </p>
+    
+                  <p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" data-bs-toggle="collapse" href="#collapseExample" role="radio" aria-expanded="false" aria-controls="collapseExample">
+                        <label class="form-check-label" for="flexRadioDefault3">
+                            <span><img src="https://cdn.shopify.com/s/files/applications/cf8da439fdbc580ee9a666e47eb462de.png" alt=""></span>
+                        </label>
+                      </div>
+    
+                  </p>
+    
+                
+    
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        After clicking “Complete order”, you will be redirected to Cashfree - UPI, Cards, Wallets, Paypal, Netbanking to complete your purchase securely.
+                    </div>
+                  </div>
+            </div>
+
+
+            <button onclick="window.location.href='./confirm.html'" id="ga_complete">COMPLETE ORDER</button>
+        </div>
+
+        <!-- show side order overview here -->
+        <div id="ga_products">
+            <p>ORDER SUMMARY</p>
+            <hr>
+            <div class="total_amt">
+                <div class="payemnt-details-box">
+                    <div class="total">
+                        <p>SubTotal:</p>
+                        <p id="subtotal"></p>
+                    </div>
+                    <div class="total">
+                        <p>Shipping:</p>
+                        <p id="cartValue">₹50</p>
+                    </div>
+                    <div class="total">
+                        <p>TotalPrice:</p>
+                        <p id="total"></p>
+                    </div>
+                    <p>or 4 interest-free payments of Rs. <span id="span"></span> with
+                        <span><img src="https://cdn.sezzle.in/branding/2.0/Sezzle_Logo_FullColor.svg"
+                                alt="" /></span>
+                    </p>
+                    <div class="icon">
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Shipping_in_24_hrs.png?v=13393426083289990043"
+                                alt="" />
+                            <p>Rapid Order Shipping</p>
+                        </div>
+                        <!-- ////////////// -->
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Includes_Taxes_and_Shipping.png?v=6421662264027915738"
+                                alt="" />
+                            <p>No Hidden Taxes</p>
+                        </div>
+                        <!-- //////////////// -->
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Secure_Payment.png?v=1619255193"
+                                alt="" />
+                            <p>Pay Securely</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+
+    <!-- bootstrap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<script>
+    let subtotal = localStorage.getItem("bellatotal");
+
+    document.getElementById("subtotal").innerText = `₹${subtotal}`;
+
+    let total = 50 + (+subtotal);
+
+    document.getElementById("total").innerText = `₹${total}`;
+
+    let span = total/4;
+
+    document.getElementById("span").innerText = `₹${span}`;
+</script>

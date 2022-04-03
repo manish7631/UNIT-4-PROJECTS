@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+}
+
+body {
+    background-image: url("https://schillings.com/wp-content/uploads/SwanbridgeCambriaQuartz1x1_2.jpg");
+    background-attachment: fixed;
+}
+#ga_topbar {
+    padding: 20px;
+}
+#ga_topbar > img {
+    width: 100%;
+}
+#ga_topbar > h4 {
+    margin-bottom: 20px;
+}
+#ga_main {
+    width: 100%;
+    background-color: white;
+}
+#ga_directory {
+    padding: 50px 20px 20px 20px;
+}
+#ga_sort_refine {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+#ga_viewas {
+    flex: 2;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#ga_sortby {
+    flex: 8;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+}
+#ga_container {
+    display: flex;
+}
+#ga_sidebar {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+#ga_sidebar > p {
+    margin: 0;
+}
+#ga_sidebar > div > button {
+    font-size: medium;
+}
+#ga_sidebar > div > button:focus {
+    border: none;
+    box-shadow: none;
+}
+#ga_sidebar > div > div > p {
+    padding: 0 20px ;
+}
+#ga_products {
+    flex: 7.5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 30px;
+    padding: 20px;
+    text-align: center;
+}
+#ga_products > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* height: 400px; */
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+.ga_img_div {
+    width: 100%;
+    height: 70%;
+    position: relative;
+}
+.ga_img_div > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.ga_text_div {
+    height: 30%;
+}
+#ga_name{
+    height: 28%;
+    font-size: medium;
+    overflow: hidden;
+}
+#ga_cutoff {
+    text-decoration: line-through;
+    color: gray;
+    margin-right: 10px;
+}
+.ga_text_div > h2 {
+    color: red;
+    font-size: larger;
+}
+.ga_text_div > h6 {
+    color: green;
+    margin: 10px 0;
+}
+#stars {
+    color: gold;
+    font-size: 15px;
+    text-align: justify;
+}
+#ga_review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0;
+    font-size: medium;
+}
+#ga_sort_select {
+    padding: 10px 10px;
+}
+#ga_sort_select:focus {
+    outline: none;
+}
+#ga_addToCart{
+    display: none;
+    padding: 10px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50,-50);
+    top : 50%;
+    left: 50%;
+    background-color: black;
+    color: white;
+    border: none;
+}
+#ga_addToCart:hover {
+    background-color: #8ec038;
+}
+#ga_addToCart:focus {
+    outline: none;
+}
+#ga_sidebar  p {
+    cursor: pointer;
+}
+
+/* for small screens */
+@media only screen and (min-device-width: 0) and (max-device-width: 480px) {
+    #ga_products {
+        flex: 10;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px 50px;
+    }
+    #ga_sidebar {
+        flex: 0;
+        display: none;
+    }
+    .ga_img_div {
+        height: 50%;
+    }
+    .ga_img_div > img {
+        height: 100%;
+    }
+    .ga_text_div {
+        height: 35%;
+        padding: 10px 10px 0 10px;
+    }
+    #ga_name {
+        height: 42%;
+    }
+    .ga_text_div > h4 {
+        font-size:small;
+    }
+    .ga_text_div > h6 {
+        font-size: small;
+    }
+    .ga_text_div > h2 {
+        font-size: larger;
+    }
+    .ga_text_div > h4 {
+        font-size: small;
+    }
+    #ga_review {
+        margin: 8px;
+    }
+    #ga_products > div {
+        padding: 0;
+    }
+    #ga_products > div > button {
+        height: 10%;
+        border: none;
+        background-color: black;
+        color: white;
+        transition: 0.4s;
+        font-size: medium;
+        border-radius: 0 0 10px 10px;
+    }
+    #ga_products > div > button:hover {
+        background-color: #8ec038;
+    }
+    #ga_directory > h5 {
+        font-size: x-small;
+    }
+    #ga_sort_refine h5{
+        font-size: small;
+    }
+    #ga_topbar > h2 {
+        font-size: small;
+    }
+    #ga_sort_select {
+        padding: 5px;
+        width: 100px;
+        font-size: small;
+    }
+}
+
+/* for medium screens */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+    #ga_products {
+        flex: 10;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        padding: 0 50px;
+    }
+    #ga_sidebar {
+        flex: 0;
+        display: none;
+    }
+    .ga_img_div {
+        height: 60%;
+    }
+    .ga_img_div > img {
+        height: 100%;
+    }
+    .ga_text_div {
+        height: 30%;
+        margin : 10px 10px 0 10px;
+    }
+    #ga_name {
+        height: 25%;
+        font-size: medium;
+    }
+    .ga_text_div > h2 {
+        font-size: larger;
+    }
+    .ga_text_div > h6 {
+        font-size: small;
+    }
+    #ga_review {
+        margin: 10px;
+    }
+    #ga_products > div {
+        padding: 0;
+    }
+    #ga_products > div > button {
+        height: 10%;
+        border: none;
+        background-color: black;
+        color: white;
+        transition: 0.4s;
+        font-size: medium;
+        padding: 10px 0;
+        border-radius: 0 0 10px 10px;
+    }
+    #ga_products > div > button:hover {
+        background-color: #8ec038;
+    }
+    #ga_directory > h5 {
+        font-size: medium;
+    }
+    #ga_sort_refine h5{
+        font-size: medium;
+    }
+    #ga_topbar > h2 {
+        font-size: large;
+    }
+    #ga_sort_select {
+        padding: 4px 5px;
+        width: 160px;
+        font-size: medium;
+    }
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../components/bottompanel.css">
+    <link rel="stylesheet" href="../components/navstyle.css">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="//cdn.shopify.com/s/files/1/0054/6665/2718/files/logo_02_32x32.png?v=1606307450">
+
+    <style>
+        #return{
+            display: flex;
+            justify-content: space-around;
+            background-color:rgb(250,250,250);
+            border: 1px solid hsl(0,0%,90%);
+            border-left: none;
+            border-right: none;
+            width: 85%;
+            margin: auto;
+        }
+        #return>h4{
+            padding: 10px;
+        }
+        #baap{
+            margin: auto;
+            width: 80%;
+            border-bottom: 1px solid hsl(0,0%,90%);
+            padding-bottom: 50px;
+        }
+        h5{
+            margin-bottom: 1%;
+        }
+        #sub{
+            text-align: center;
+            width: 150px;
+            height: 40px;
+            margin-top: 20px;
+            color: white;
+            background-color:black;
+            border: none;
+            box-shadow: inset 0 0 0 lightGREEN;
+            transition: ease-in-out 0.3s;
+             outline: none;
+             font-size: large;
+             
+        }
+        #sub:hover{
+           background-color: lightgreen;
+           cursor: pointer;
+           
+        }
+        form>h5{
+            margin-bottom: 1%;
+            font-family: Museo Sans,sans-serif!important;
+        }
+        input{
+            width: 300px;
+            height: 25px;
+        }
+        #forget{
+            display: flex;
+            gap: 10px;;
+
+        }
+        #submit{
+            text-align: center;
+            width: 200px;
+            height: 35px;
+            margin-top: 20px;
+            color: white;
+            background-color:lightgreen;
+            border: none;
+            box-shadow: inset 0 0 0 #f9e506;
+            transition: ease-in-out 0.3s;
+             outline: none;
+             font-size:medium;
+        }
+        *{
+            font-family:Museo Sans,sans-serif!important ;
+        }
+        #submit:hover{
+           background-color:black;
+           cursor: pointer;
+           
+        }
+        #fromstore{
+               display: flex;
+               grid-template-columns: repeat(3,1fr);
+               justify-content: space-between;
+               /* border: 1px solid red; */
+               width: 70%;
+               margin: auto;
+        }
+        #suggestion{
+             height: 40px;
+             background-color: rgb(220,53,69);
+         }
+         .ORpartition{
+            width:50px; 
+            height:50px;
+            border-radius:50%;
+            text-align: center;
+            padding: 20px 10px;
+            /* font-size: 20px; */
+            border:1px solid grey;
+            color: grey;
+         }
+         .PartitionTop{
+            background-color:grey;
+            width:1px; 
+            height:170px;
+            margin: auto
+         }
+
+         @media only screen and (min-width:400px) and (max-width:700px){
+              #baap{
+                  display: grid;
+                  grid-template-columns:repeat(1,1fr) ;
+              }
+         }
+         @media only screen  and (max-width:1024px){
+            #fromstore{
+                  flex-direction: column;
+              }
+              .ORpartition{
+                  display: none;
+              }
+              .PartitionTop{
+                  display: none;
+              }
+              #return>h4:nth-child(2){
+                  display: none;
+              }
+         }
+    </style>
+</head>
+<body>
+    <div id="bellavitanav"></div>
+  <div id="baap">
+
+    <div style="display: flex;gap:5px"><p>Home</p>
+    <p style="color:darkgray">>  Account</p></div>
+    <div><h3>ACCOUNT</h3></div>
+  <div id="return">
+      <h4>RETURNING CUSTOMER</h4>
+      <h4>NEW CUSTOMER</h4>
+  </div>
+
+  <div id="suggestion"></div>
+  <div id="fromstore"> <form action="">
+        
+
+    <h5 style="margin-top: 20px;">Email Address</h5>
+    <input type="email" id="email">
+    <h5>Password</h5>
+    <input type="password" id="pass"><hr style="border: 0ch;">
+    <input id="sub" type="submit" value="LOGIN"  >
+</form>
+<div style="margin:auto" ><div class="PartitionTop" ></div>
+<div class="ORpartition" >OR</div>
+<div class="PartitionTop" ></div>
+</div>
+  <div style="margin:5% auto">
+      <div style="text-align: center;"> <p>Register with us for a faster checkout,<br>
+        to track the status of your order and more.</p>
+        <input onclick="window.location.href='signup.html'" id="submit" type="submit" value="CREATE AN ACCOUNT"></div>
+   
+  </div>
+   </div>
+   
+    <div id="forget">
+        <p>Forget your password?</p>
+        <p>or</p>
+        <p onclick="">Return to Store</p>
+
+    </div>
+    </div>
+
+    <div id="huz_bottom_panel"></div>
+</body>
+</html>
+
+<script type="module">
+
+import navbar from "../../components/navbar.js"
+
+document.getElementById("bellavitanav").innerHTML=navbar();
+
+import bottomPanel from "../../components/bottompanel.js"
+
+let thelastpanel = document.querySelector("#huz_bottom_panel");
+thelastpanel.innerHTML = bottomPanel();
+
+
+
+document.querySelector("form").addEventListener("submit", login)
+    
+    async function login(event){
+        event.preventDefault()
+            try {
+            let login_data={
+                email: document.getElementById("email").value,
+                password: document.getElementById("pass").value
+            }
+            let login_data_json = JSON.stringify(login_data);
+    
+            let res= await fetch("https://bella-vita-clone-backend.herokuapp.com/login", {
+                method:"POST",
+                body:login_data_json,
+    
+                headers:{
+                    "Content-Type":"application/json",
+                },
+            });
+            let data= await res.json();
+            if(data.token)
+            {
+                localStorage.setItem("loginToken", data.token);
+                localStorage.setItem("userName", JSON.stringify({firstName: data.user.firstName,
+                lastName: data.user.lastName}));
+                window.location.href="../index.html"
+                alert("Successfully Logged in")
+            }
+            // getUser(login_data.username, data.token);
+            
+            } catch (error) {
+                alert("Wrong Credentials")
+            }
+    }
+
+
+
+
+    // -----------------------------------------------------------------------Search Function
+
+document.querySelector(".query_icon").addEventListener("click", ()=>{
+    let searchvalue= document.querySelector("#query");
+    searchvalue.style.display="flex";
+    searchvalue.addEventListener("keypress", function(event){
+        if(event.key=="Enter")
+        {
+
+            if(searchvalue.value.length > 0) {
+                localStorage.setItem("bellaSearch", searchvalue.value);
+                window.location.href = ".//Products/search.html"
+            }
+            
+            //console.log(searchvalue.value)
+         }
+     });
+})
+
+// showing number of items present in the cart on the navbar;
+let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
+
+document.getElementById("ga_cartItems1").innerText = carArrLength.length
+document.getElementById("ga_cartItems2").innerText = carArrLength.length
+</script>

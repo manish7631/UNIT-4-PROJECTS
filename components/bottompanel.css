@@ -1,0 +1,121 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: white;
+}
+#huz_quicklinks, #last_div_ever{
+    padding: 15px;
+}
+#huz_availability p{
+    margin-top: 15px;
+    margin-bottom: 0px;   
+}
+#huz_availability{
+    padding: 5px;
+    overflow-x: hidden;
+}
+#huz_availability, #last_div_ever{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(213,224,234);
+    font-weight: bold;
+}
+#last_div_ever {
+    width: 100%;
+    overflow-x: hidden;
+}
+#content_bottom{
+    display: flex;
+    width: 60%;
+    margin:50px auto;
+    justify-content: space-around;
+}
+#content_bottom p{
+    font-size:13px ;
+    margin-bottom: 15px;
+}
+#content_bottom p:hover{
+    color: rgb(25, 153, 25);
+    cursor: pointer;
+}
+#content_bottom h4{
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+#content_bottom div{
+    padding: 20px;
+    /* border: 1px solid blue; */
+    width: 20%;
+    text-align: justify;
+}
+#content_bottom input{
+    height: 30px;
+   padding: 5px;
+    width: 100%;
+    border: 2px solid black;
+
+}
+#content_bottom button{
+   width: 50%;
+   margin-left: 20%;
+   margin-top: 15px;
+   height: 30px;
+   padding: 5px;
+   background-color: black;
+   color: white;
+   border: none;
+}
+@media only screen and (max-width:990px) and (min-width:780px) {
+    #content_bottom{
+        display: grid;
+        grid-template-columns: repeat(4,25%);
+        width: 60%;
+        /* border: 1px solid red; */
+        ;
+         margin:50px auto;
+        justify-content: space-around; 
+    }
+    #content_bottom div{
+        padding: 20px;
+        /* border: 1px solid blue; */
+        width: 100%; 
+        text-align: justify;
+    }
+    #content_bottom div:nth-child(5){
+        padding: 20px; 
+        /* border: 1px solid blue; */
+        width: 400%;
+        text-align: justify;
+        /* margin-left: 100%; */
+    }
+   
+}
+
+@media only screen and (max-width:779px) {
+    #content_bottom>div:nth-child(1)> p, #content_bottom>div:nth-child(2)> p{
+        display: none;
+    }
+    #content_bottom>div:nth-child(3)> p,  #content_bottom>div:nth-child(4)> p{
+        display: none;
+    }
+    #content_bottom{
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        /* border: 1px solid blue; */
+        /* text-align: center; */
+    }
+    #content_bottom div{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+   
+}

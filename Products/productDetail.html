@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Page</title>
+    <link rel="stylesheet" href="./styles/productDetail.css">
+    <link rel="stylesheet" href="./styles/image_slider.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../components/navstyle.css">
+    <link rel="stylesheet" href="../components/bottompanel.css">
+    <link rel="icon" type="image/x-icon" href="//cdn.shopify.com/s/files/1/0054/6665/2718/files/logo_02_32x32.png?v=1606307450">
+</head>
+<body>
+    <div id="ga_navbar"></div>
+    <div id="ga_directory">
+        <h5>Home > Natural & Ayurvedic Beauty Care Products > <span id="ga_direSpan" style="color: grey"></span></h5>
+    </div>
+    
+    <!-- this div shows the images of the products and their details -->
+    <div id="ga_container">
+
+        <div id="ga_image">
+            <div id="ga_wrapper">
+                <img class="image" id="featured">
+        
+                <div id="ga_slide_wrapper">
+                    <img src="images/left-arrow.png" id="slideleft" class="ga_arrow">
+        
+                    <div id="ga_slider">
+                        <img id="sliderImage" class="ga_thumbnail ga_active_img image">
+                        <img src="images/image2.jpg" alt="" class="ga_thumbnail">
+                        <img src="images/image3.jpg" alt="" class="ga_thumbnail">
+                        <img src="images/image4.jpg" alt="" class="ga_thumbnail">
+                        <img src="images/image5.jpg" alt="" class="ga_thumbnail">
+                        <img src="images/image6.jpg" alt="" class="ga_thumbnail">
+                        <img src="images/image7.jpg" alt="" class="ga_thumbnail">
+                        <img src="images/image8.jpg" alt="" class="ga_thumbnail">
+                    </div>
+                    <img src="images/right-arrow.png" id="slideRight" class="ga_arrow">
+                </div>
+            </div>
+        </div>
+
+        <div id="ga_main">
+            <div id="ga_details"></div>
+            <div id="ga_extraText">
+                <h4 style="margin-top: 15px;">Quantity:</h4>
+                <div id="ga_quantity_container">
+                    <div id="ga_minus">-</div>
+                    <h4 id="ga_quantity">1</h4>
+                    <div id="ga_add">+</div>
+                </div>
+                <button id="ga_addCart">ADD TO CART</button>
+                <h4>Check COD Availability</h4>
+                <div id="pincode">
+                    <input type="text" placeholder="Postal code e.g. 414001">
+                    <button>CHECK</button>
+                </div>
+                <div>
+                    <div class="ga_offer"><h4>Flexi Box</h4></div>
+                    <h4>Buy Any 4 Products Of Your Choice At ₹ 999 SHOP NOW - <span><a href="">Click here</a></span>. No Coupon Code Required.</h4>
+                </div>
+                <div>
+                    <div class="ga_offer"><h4>Buy 4 and Pay for 3</h4></div>
+                    <h4>Add 4 Products To Your Cart & Pay For Only 3! SHOP NOW - <span><a href="">Click here</a></span>. No Coupon Code Required.</h4>
+                </div>
+                <p id="p">Exfoliate is a face & body scrub grit that helps clean dead skin cells from them naturally. The mild walnut & coffee granules help de-tan your skin and help in removing accumulated dirt from elbows, knees, and neck. Can also be used as a scalp scrub to remove dandruff & flaky skin.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- this div show the description,ingredients,benefits and how to use below the products detail -->
+    <div id="ga_information">
+        <div id="ga_infoTags">
+            <h4 id="ga_description">DESCRIPTION<h4>
+            <h4 id="ga_ingre">INGREDIENTS<h4>
+            <h4 id="ga_benefits">BENEFITS<h4>
+            <h4 id="ga_howToUse">HOW TO USE<h4>
+        </div>
+        <div id="ga_showInfo">    
+            <h5 id="ga_infoTitle">DESCRIPTION</h5>
+        
+            <p id="p">The Bella Vita Organic C-Glow Face Pack is a blend of natural & Ayurvedic ingredients that brightens, nourishes & hydrates your skin and gives your face a natural glow from within. Power packed with the goodness of Vitamin C, Orange Peel, Turmeric & Saffron, this face pack addresses multiple concerns all at once. Vitamin C & Orange peel are rich in antioxidants that contain bleaching agents and improve the skin tone by reducing dark spots and pigmentation. Kaolin Clay is a natural exfoliator and deep cleans your pores and absorbs excess oil from your skin. The Butter Blend of Mango, Shea & Cocoa nourish & hydrate your skin from deep within and leave it feeling suppler and brighter.</p>
+            <p id="p">Formulated with the goodness of pink clay, walnut, rose essential oil, aloe vera, and more, Glowey is perfect for that bright, clean and glowing skin. The carefully sourced natural and ayurvedic ingredients soothe the skin, gently exfoliate it, balance its pH level, reduce early signs of aging, smoothen it, revive and rejuvenate it over time. It is the best cleanser for the face as walnut grits gently scrub the skin while pink clay mildly exfoliates, improving the skin's complexion, giving you glowing, bright, and smooth skin. Being a mild exfoliate, Glowey is a well-suited face scrub for dry skin and gently removes all the dead skin cells from the skin. As a mask, it also works as a great face pack for women when you don't want to sit for long hours at a salon. Just a simple application of this on your face & neck for 10-15 minutes will give you a salon-like glow at home. </p>
+        </div>
+    </div>
+    <hr>
+    <h2 style="margin: 30px 5%;">RELATED PRODUCTS</h2>
+    <div id="ga_divSlider">
+        <img src="images/left-arrow.png" id="leftArrow" class="ga_arrow">
+        <div id="ga_divs"></div>
+        <img src="images/right-arrow.png" id="rightArrow" class="ga_arrow">
+    </div>
+    <div id="ga_userReview">
+        <h2>Customer Reviews</h2>
+        <div class="showReview">
+            <h1 id="userRating"></h1>
+            <h3 id="userStars"></h3>
+            <p id="reviewCount"></p>
+        </div>
+        <img src="./images/Screenshot (107).png" alt="">
+    </div>
+
+    <div style="background-color: white;" id="ga_footer"></div>
+</html>
+<script src="./scripts/productDetail.js" type="module"></script>
+<script src="./scripts/image_slider.js"></script>

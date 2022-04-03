@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../components/navstyle.css">
+    <link rel="stylesheet" href="../components/bottompanel.css">
+    <title>Your Shopping Cart</title>
+    <link rel="icon" type="image/x-icon"
+        href="//cdn.shopify.com/s/files/1/0054/6665/2718/files/logo_02_32x32.png?v=1606307450">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #theCart_div {
+            width: 70%;
+            margin: 2.5% auto;
+            /* border: 1px solid red; */
+        }
+
+        .mycart {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        
+
+        #the_main_div {
+            display: flex;
+            justify-content: space-between;
+        }
+        @media only screen and (max-width:1050px){
+             #the_main_div{
+                 flex-direction: column;
+             }
+            
+            }
+
+        #products_div {
+            width: 60%;
+            height: 100%;
+        }
+        @media only screen and (max-width:1050px){
+            #products_div{
+                width: 100%;
+            }
+        }
+
+        #product_content {
+            height: 100px;
+            /* border: 1px solid blue; */
+            padding: 10px;
+        }
+
+        .payemnt-details-box>.total {
+            padding: 10px;
+            border-bottom: 1px solid rgb(207, 204, 204);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .payemnt-details-box>.total p {
+            /* height:auto; */
+            /* line-height:25px; */
+            font-weight: bold;
+        }
+
+        /* After total div */
+        .payemnt-details-box>p {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+
+        p>span>img {
+            width: 70px;
+        }
+
+        /* checkout button */
+        .payemnt-details-box button {
+            width: 100%;
+            height: 45px;
+            border: none;
+            font-size: 1rem;
+            color: #fff;
+            font-weight: bold;
+            background-color: rgb(82, 179, 89);
+            margin-top: 10px;
+        }
+
+        /* after checkout button icons */
+        .icon {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 5px;
+            margin-top: 3vh;
+        }
+
+        .icon div img {
+            width: 60px;
+        }
+
+        .icon div p {
+            font-size: 0.65rem;
+            width: 50px;
+            line-height: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #huz_bestseller,
+        #huz_newarrival,
+        #huz_combolist {
+            padding: 30px;
+            /* border: 1px solid black; */
+        }
+
+        #best_seller_slider,
+        #new_arrival_slider,
+        #combolist_slider {
+            display: flex;
+            width: 65%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin: auto;
+            height: 420px;
+            /* justify-content: center; */
+        }
+
+        #best_seller_slider::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        #best_seller_slider::-webkit-scrollbar-track {
+            height: 5px;
+            /* background-color: grey; */
+        }
+
+        #best_seller_slider::-webkit-scrollbar-thumb {
+            height: 5px;
+            background-color: black;
+        }
+
+        #productsInnerDiv {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 400px;
+            /* width: 400px; */
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            cursor: pointer;
+        }
+
+        .ga_img_div {
+            width: 100%;
+            height: 55%;
+            position: relative;
+        }
+
+        .ga_img_div>img {
+            /* width: 100%; */
+            height: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        #ga_name {
+            height: 45%;
+            font-size: 13px;
+            width: 200px;
+            /* overflow: scroll; */
+        }
+
+        #ga_cutoff {
+            text-decoration: line-through;
+            color: gray;
+            margin-right: 10px;
+        }
+
+        .ga_text_div>h2 {
+            color: red;
+            font-size: 15px;
+        }
+
+        .ga_text_div>h6 {
+            color: green;
+            margin: 10px 0;
+        }
+
+        #stars {
+            color: gold;
+            font-size: 13px;
+            text-align: justify;
+        }
+
+        #ga_review {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 8px 0;
+            font-size: medium;
+        }
+
+        #ga_sort_select {
+            padding: 10px 10px;
+        }
+
+        #ga_sort_select:focus {
+            outline: none;
+        }
+
+        #ga_addToCart {
+            display: none;
+            padding: 10px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50, -50);
+            top: 50%;
+            left: 50%;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+
+        #ga_addToCart:hover {
+            background-color: #8ec038;
+        }
+
+        #ga_addToCart:focus {
+            outline: none;
+        }
+
+        .huz_heading {
+            width: 70%;
+            padding: 15px;
+            margin: auto;
+        }
+        #huz_remove_button{
+            background-color:  white;
+            border:none;
+            /* margin-top:-30% ; */
+            color: gray;
+            margin-left: 80%;
+            
+        }
+        #huz_remove_button:hover{
+            color: black;
+            font-weight: bold;
+        }
+        .the_inc_dec_button{
+            width:50px;
+            font-size:20px;
+            background-color:white;
+            border:0.25px solid gray
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bellavitanav"></div>
+    <div id="theCart_div">
+        <div>
+            <p style="font-weight: lighter;">Home> Shopping Cart</p>
+        </div>
+        <div class="mycart">
+            <h2>MY CART</h2>
+            <p>Continue Shopping ></p>
+        </div>
+        <div id="the_main_div">
+            <div id="products_div">
+                <p>PRODUCTS</p>
+                <hr>
+                <div id="product_content"></div>
+            </div>
+            <div class="payemnt-details-box">
+                <p>ORDER SUMMARY</p>
+                <hr>
+                <div class="total_amt">
+                    <div class="payemnt-details-box">
+                        <div class="total">
+                            <p>Total:</p>
+                            <p id="cartValue"></p>
+                        </div>
+                        <p>or 4 interest-free payments of Rs. 399.00 with
+                            <span><img src="https://cdn.sezzle.in/branding/2.0/Sezzle_Logo_FullColor.svg"
+                                    alt="" /></span>
+                        </p>
+                        <div>
+                            <button style="cursor: pointer;" id="go_to_checkout"></button>
+                        </div>
+                        <div class="icon">
+                            <div>
+                                <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Shipping_in_24_hrs.png?v=13393426083289990043"
+                                    alt="" />
+                                <p>Rapid Order Shipping</p>
+                            </div>
+                            <!-- ////////////// -->
+                            <div>
+                                <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Includes_Taxes_and_Shipping.png?v=6421662264027915738"
+                                    alt="" />
+                                <p>No Hidden Taxes</p>
+                            </div>
+                            <!-- //////////////// -->
+                            <div>
+                                <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Secure_Payment.png?v=1619255193"
+                                    alt="" />
+                                <p>Pay Securely</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------------------------------------------------------------Best Seller -->
+    <div id="huz_bestseller">
+        <div class="huz_heading">
+            <h2>BEST SELLERS</h2>
+            <hr>
+        </div>
+        <div id="best_seller_slider"></div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------------------- -->
+    <div id="huz_bottom_panel"></div>
+</body>
+
+</html>
+
+<script src="./scripts/cart.js" type="module"></script>

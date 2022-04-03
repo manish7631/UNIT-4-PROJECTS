@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="icon" type="image/x-icon" href="//cdn.shopify.com/s/files/1/0054/6665/2718/files/logo_02_32x32.png?v=1606307450">
+
+    <style>
+        *{
+            font-family:Museo Sans,sans-serif!important ;
+        }
+        #boss{
+            display: grid;
+            grid-template-columns:500px 400px;
+            width: 85%;
+            margin: auto;
+            /* border: 1px solid green; */
+            justify-content: space-between;
+            padding-bottom: 50px;
+        }
+        #email,#phone,#add,#location{
+            margin-top: 30px;
+            width: 98.5%;
+            height: 35px;
+            
+        }
+        #check{
+            margin-top: 30px;
+            
+        }
+        #payment{
+            background-color: black;
+            color: white;
+            width: 100%;
+            height: 48px;
+            border: none;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        #formsDAD{
+            /* border: 1px solid orange; */
+            
+        }
+        #name,#last{
+            margin-top: 30px;
+            width: 47%;
+            height: 35px;
+        }
+        #city,#state,#pin{
+            height:35px ;
+            width: 33%;
+        }
+        #cartItems{
+              
+              
+              /* border: 1px solid red; */
+        }
+        #upperwala{
+           
+         
+            width: 100%;
+        
+        }
+        #status{
+            margin: auto;
+            /* border: 1px solid purple; */
+            height: 50px;
+            display: flex;
+            width: 40%;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        #status>#circle{
+            width: 20px;
+            height: 20px;
+            border: 1px solid grey;
+            border-radius: 50%;
+            text-align: center;
+            
+        }
+        #status>#line{
+            width: 50px;
+            background-color: black;
+            height: 1px;
+            margin-top: 10px;
+        }
+       #status>#circle1{
+            width: 20px;
+            height: 20px;
+            border: 1px solid grey;
+            border-radius: 50%;
+            text-align: center;
+            background-color: mediumseagreen;
+            color: white;
+           
+        }
+        @media only screen and (max-width:960px){
+            #boss{
+                grid-template-columns: 500px;
+            }
+        }
+        #maal{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;            /* text-align: center; */
+        }
+        #div1{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+            margin-right:10px ;
+           
+        }
+        #discount{
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin: auto;
+            height:378px;
+            background-color: rgb(243,199,70);
+            grid-gap: 25px;
+            
+
+        }
+        #discount::-webkit-scrollbar{
+            height: 5px;
+        }
+        #discount::-webkit-scrollbar-track{
+            height: 5px;
+        }
+        #discount::-webkit-scrollbar-thumb{
+            height: 5px;;
+            background-color: black;
+        }
+        #discount>div{
+            background-color: white;
+            margin-top: 20px;
+            padding: 2px;
+            text-align: center;
+            
+            border-radius: 10px;
+        }
+        #delete{
+            border: none;
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+            height: 25px;
+            border-radius: 5px;
+        }
+        #delete:hover{
+            color: red;
+        }
+        #gift{
+            border: 1px solid lightgreen;
+            width: 70px;
+            background-color: white;
+            color: greenyellow;
+        }
+        #mytext:focus{
+                outline: none;
+        }
+        
+       
+
+    </style>
+</head>
+<body>
+    <div id="upperwala">
+        <img style="height: 250px; width:100%" src="https://images-na.ssl-images-amazon.com/images/S/abs-image-upload-na/9/AmazonStores/A21TJRUUN4KGV/b1598cd655f2f398a1fef6b40752d118.w1200.h400.jpg" alt="">
+    </div>
+    <div id="status">
+        <div id="circle1">></div>
+        <div id="line"></div>
+        <div style="box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;" id="circle1">></div>
+        <div id="line"></div>
+        <div  id="circle">></div>
+        <div id="line"></div>
+        <div  id="circle">></div>
+    </div>
+    <div></div>
+    <div id="boss">
+       
+    <div id="formsDAD">
+    <form action="">
+        <div style="display:flex; justify-content: space-between;">
+            <p>CONTACT INFORMATION </p>
+            <P>Already have an account?<a href="login.html">LOG IN</a></P>
+        </div>
+        <input id="email" type="email" placeholder="Email"><br>
+        <h5>Enter a Valid Email</h5>
+        <input id="check" type="checkbox">Email/SMS me with news and offers
+        <hr style="border-top:1px dotted black">
+        <p>SHIPPING ADDRESS</p>
+        <div style="display:flex; justify-content:space-between"><input id="name" type="text" placeholder="First name">
+            
+            <input id="last" type="text " placeholder="Last name"></div>
+        <br>
+
+        <input id="add" type="text" placeholder="Flat,House NO, Bulding, Comapany,Apartment"><br>
+         <input id="location" type="text" placeholder="Area,Colony,Street,Sector,Village"><br>
+         <div style="display:flex">
+         <input id="city" type="text" placeholder="City">
+         <select name="" id="state">
+             <option value="">State</option>
+             <option value="">Andaman and Nicobar Islands</option>
+             <option value="">Andhra Pradesh</option>
+             <option value="">Arunachal Pradesh</option>
+             <option value="">Assam</option>
+             <option value="">Bihar</option>
+             <option value="">Chandigarh</option>
+             <option value="">Chhatisgarh</option>
+             <option value="">Delhi</option>
+             <option value="">Goa</option>
+             <option value="">Gujrat</option>
+             <option value="">Hariyana</option>
+             <option value="">Punjab</option>
+             <option value="">Tamil Nadu</option>
+             <option value="">Bangal</option>
+             <option value="">Odisha</option>
+             <option value="">Jharkhand</option>
+             <option value="">Talengana</option>
+             <option value="">Tripura</option>
+             <option value="">Ladakh</option>
+             <option value="">Manipur</option>
+             <option value="">Meghalaye</option>
+             <option value="">Mizoram</option>
+             <option value="">Uttrakhand</option>
+             <option value="">Kerala</option>
+             <option value="">Karnataka</option>
+             <option value="">Maharashtra</option>
+             <option value="">Utter Pradesh</option>
+             <option value="">Nagaland</option>
+         </select>
+         <input id="pin" type="number" placeholder="PIN code"><br>
+         </div>
+         <input id="phone" type="number" placeholder="Phone">
+         <!-- <input id="payment" type="submit" value="CONTINUE TO PAYMENT"> -->
+    </form>
+        <button id="payment">CONTINUE TO PAYMENT</button>
+    <div>
+        <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/payments-stripe-sub-footer_2.svg?v=1616140901" alt="">
+       
+    </div>
+</div>
+<div id="cartItems">
+
+     <div id="cartmaal"></div>
+     <div id="cartmaal2"></div>
+    
+   
+    <div id="discount">
+    
+    </div>
+    <div style="display:flex;justify-content:space-between;border:1px solid grey">
+        <input id="mytext" style="height:40px;border: none;" type="text" placeholder="Gift card or Discount Code">
+        <button id="gift" onclick="submit()">APPLY</button>
+    </div>
+
+    <div>
+        <div style="display:flex; justify-content:space-between">
+            <div><p>Subtotal</p>
+            <p>Shipping </p></div>
+            <div style="text-align:right">
+                
+            <p id="total-price2" ></p>
+            <p>Calulate at the next step</p>
+            </div>
+            
+        </div>
+        <p id="total">total price</p>
+        <div style="display:flex;justify-content:space-between;">
+            <p style="font-size:15px" id="tax"></p>
+            <p id="total-price"></p>
+        </div>
+    </div>
+
+    
+</div>
+</div>
+</body>
+</html>
+<script>
+    let discart=JSON.parse(localStorage.getItem("discounted"))||[];
+  let cartArray=JSON.parse(localStorage.getItem("BellaVitaCart"))||[];
+let parent=document.getElementById("cartmaal")
+let parent2=document.getElementById("cartmaal2")
+
+let Discount=document.getElementById("discount")
+
+
+//  promo code function 
+
+   var promo=document.getElementById("mytext")
+       var count=0
+     function submit(){
+         
+         if(promo.value==="BELLAVITA007" || promo.value==="SANDEEP007" || promo.value==="GAURAV007" ||promo.value==="HUZAIFA007"){
+
+            var discount=Math.floor(subtotal/2.2);
+            subtotal=subtotal-discount;
+            count++
+           
+            if(count==1){
+                document.getElementById("total-price").textContent=` ₹${subtotal}`
+  document.getElementById("total-price2").textContent=` ₹${subtotal}`
+        }
+        else{
+            alert("Promo Already Applied")
+        }
+           
+           
+     }
+     
+     else{
+         alert("invalid Promo")
+     }
+
+     }
+
+
+    // total calculator
+ let nos=cartArray.length;
+ var subtotal =cartArray.reduce(function (ac,el){
+     return ac+Number(el.Price*el.Qty);
+ },0)
+
+ console.log(+(subtotal))
+
+ document.getElementById("total").textContent=`TOTAL `
+ document.getElementById("tax").innerText=`including ₹82.73 in taxes`
+ document.getElementById("total-price").textContent=` ₹${subtotal}`
+  document.getElementById("total-price2").textContent=` ₹${subtotal}`
+
+
+
+     
+
+     let DiscountArray =[
+         {
+             "image" :"https://cdn.shopify.com/s/files/1/0054/6665/2718/products/NicoBalm-01_6c683236-3694-4219-8fee-e969bbf9e94d.jpg?v=1640436778",
+             "price" : 99.00,
+             "description" :"LipBalm Natural Balm For Dry and Chapp..."
+         },
+
+         {
+             "image" :"https://cdn.shopify.com/s/files/1/0054/6665/2718/products/SkinSolve-01_x150.jpg?v=1626506718",
+             "price" :99.00,
+
+             "description" : "SkinSolve Multi Benefit Face Cream & Body ..."
+         },
+
+         {
+             "image" :"https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Glowtion-01_97cd1210-3168-4b56-ad45-b5301955f676.jpg?v=1635231959",
+             "price" :99.00,
+
+             "description" : "Glowtion Face & Body Moisturizing Butter...",
+
+         }
+     ]  
+
+
+            //   cart item from huzaifa's cart
+
+          function appendcartMaal(cartArray){
+              parent.innerHTML=""
+          cartArray.map((el,index)=>{
+        
+        var div=document.createElement("div")
+        div.id="maal"
+
+         var div2=document.createElement("div")
+            div2.style.display="flex"
+          
+        var div3=document.createElement("div")
+            div3.style.display="flex"
+            div3.style.justifyContent="space-between"
+            div3.style.width="70%"
+            div3.style.margin="auto"
+            
+
+
+        
+
+        var image=document.createElement("img")
+        image.src=el.Img_url
+        image.style.width="40%"
+        
+
+        var price=document.createElement("h4")
+        price.innerText="₹"+el.Price;
+
+             var des=document.createElement("p")
+             des.innerHTML=el.Name
+             des.style.fontSize="13px"
+
+             var btn=document.createElement("button")
+             btn.innerHTML="Remove"
+             btn.id="delete"
+             btn.addEventListener("click", ()=>{
+                 RemoveFunction(index)
+             })
+             
+            
+
+             div2.append(image,des)
+             div3.append(price,btn)
+           div.append(div2,div3)
+           parent.append(div)
+  
+          })
+          }
+          appendcartMaal(cartArray)
+
+          function RemoveFunction(index){
+            
+                
+              cartArray.splice(index, 1)
+              localStorage.setItem("BellaVitaCart", JSON.stringify(cartArray))
+
+              appendcartMaal(cartArray)
+              var subtotal =cartArray.reduce(function (ac,el){
+     return ac+Number(el.Price*el.Qty);
+ },0)
+
+ console.log(+(subtotal))
+
+ document.getElementById("total").textContent=`TOTAL `
+ document.getElementById("tax").innerText=`including ₹82.73 in taxes`
+ document.getElementById("total-price").textContent=` ₹${subtotal}`
+ document.getElementById("total-price2").textContent=` ₹${subtotal}`
+
+          }
+
+         
+  
+            //    item from Discount box placed in checkoutpage
+
+          function appenddiscount(DiscountArray){
+            
+            DiscountArray.forEach((el)=>{
+
+                let div= document.createElement("div")
+                div.id="div1"
+
+                let div2=document.createElement("div")
+
+
+                let image=document.createElement("img")
+                image.src=el.image;
+                image.style.width="150px"
+
+                let price1=document.createElement("p")
+                price1.innerHTML=" ₹199.00"
+                price1.style.textDecoration="line-through"
+                price1.style.color="lightgrey"
+
+                let price=document.createElement("p")
+                price.innerText="₹"+el.price+".00"
+
+
+                let des=document.createElement("p")
+                des.innerHTML=el.description
+
+                let btn=document.createElement("button")
+                btn.innerHTML="ADD TO CART"
+                btn.style.backgroundColor="green";
+                btn.style.color="white";
+                btn.style.border="none";
+                btn.style.borderRadius="2px"
+                btn.id="delete"
+                btn.addEventListener("click",function(){
+                    discountcart(el)
+                })
+                
+               
+                 
+                 
+                div2.append(image,price1,price,des,btn)
+                div.append(div2)
+
+                Discount.append(div)
+            })
+          }
+
+           function discountcart(el){
+              DiscountArray.push(el)
+              console.log(el)
+            //    localStorage.setItem("discounted",JSON.stringify(DiscountArray))
+               alert("successfully added to cart")
+               
+           }
+    
+          appenddiscount(DiscountArray)
+
+          function appendDiscountmaal(discart,parent2){
+           parent2.innerHTML=""
+
+            discart.map((el,index)=>{
+               
+                var div=document.createElement("div")
+        div.id="maal"
+
+         var div2=document.createElement("div")
+            div2.style.display="flex"
+          
+        var div3=document.createElement("div")
+            div3.style.display="flex"
+            div3.style.justifyContent="space-between"
+            div3.style.width="70%"
+            div3.style.margin="auto"
+           
+        var image=document.createElement("img")
+        image.src=el.image
+        image.style.width="40%"
+        
+
+        var price=document.createElement("p")
+        price.innerText="₹"+el.price+".00";
+
+             var des=document.createElement("p")
+             des.innerHTML=el.description
+
+             var btn=document.createElement("button")
+             btn.innerHTML="Remove"
+             btn.id="delete"
+             btn.addEventListener("click", ()=>{
+                 Remove2Function(index)
+             })
+             
+            
+
+             div2.append(image,des)
+             div3.append(price,btn)
+           div.append(div2,div3)
+           parent2.append(div)
+            })
+           }
+           appendDiscountmaal(discart,parent2)
+
+           function Remove2Function(index){
+            
+                
+            DiscountArray.splice(index, 1)
+            localStorage.setItem("discounted", JSON.stringify(DiscountArray))
+            appendDiscountmaal(discart,parent2)
+            
+        }
+
+
+
+        document.getElementById("payment").addEventListener("click",()=>{
+                  
+
+            localStorage.setItem("bellatotal",subtotal);
+            window.location.href = "../Navbar and bottom panel/payments.html"
+            
+        })
+
+
+
+</script>

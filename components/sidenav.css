@@ -1,0 +1,24 @@
+#huz_sidenav{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 10px;
+    width: 25%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.dropdown-submenu {
+  position: relative;
+  border: none;
+  
+}
+
+.dropdown-submenu .dropdown-menu {
+  border: none;
+}
+.dropdown>button{
+    border: none;
+    margin-left: 25px;
+}
+#huz_sidenav h4{
+    margin-left: 25px;
+}
